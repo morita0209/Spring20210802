@@ -5,7 +5,8 @@ public class Student {
 	private String name;
 	
 	public Student() {
-		System.out.println("Student() constructor");
+		System.out.println("Student constructor");
+		System.out.println(super.toString());
 	}
 	
 	public void init() {
@@ -35,6 +36,8 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + "]";
 	}
+
+	
 	
 	
 }
