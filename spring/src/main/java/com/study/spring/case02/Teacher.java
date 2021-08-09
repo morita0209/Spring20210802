@@ -1,5 +1,7 @@
 package com.study.spring.case02;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.function.ToIntFunction;
@@ -9,6 +11,8 @@ public class Teacher {
 	private Integer id;
 	private String name;
 	private Set<Student> students;
+	private List<String> subjects;
+	private Map<String, Integer> salary;
 	
 	public Integer getId() {
 		return id;
@@ -44,11 +48,24 @@ public class Teacher {
 		return Objects.equals(id, other.id) && Objects.equals(name, other.name)
 				&& Objects.equals(students, other.students);
 	}
+	
 	@Override
 	public String toString() {
-		return "Teacher [id=" + id + ", name=" + name + ", students=" + students + "]";
+		return "Teacher [id=" + id + ", name=" + name + ", students=" + students + ", subjects=" + subjects
+				+ ", salary=" + salary + "]";
 	}
-	
+	public List<String> getSubjects() {
+		return subjects;
+	}
+	public void setSubjects(List<String> subjects) {
+		this.subjects = subjects;
+	}
+	public Map<String, Integer> getSalary() {
+		return salary;
+	}
+	public void setSalary(Map<String, Integer> salary) {
+		this.salary = salary;
+	}
 	public int getTotalCredits() {
 		int total = 0;
 		if (students != null) {
