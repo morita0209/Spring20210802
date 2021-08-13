@@ -1,5 +1,6 @@
 package com.study.spring.case02;
 
+// Yellow A4
 public class Paper {
 	private Integer id;
 	private Color color;
