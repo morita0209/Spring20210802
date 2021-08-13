@@ -26,12 +26,33 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
 		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd">
-		
-	<context:component-scan base-package="com.study.spring.case03.controller"></context:component-scan>
-	<context:component-scan base-package="com.study.spring.case03.service"></context:component-scan>
-	<context:component-scan base-package="com.study.spring.case03.dao"></context:component-scan>
 	
-		
+	<context:component-scan base-package="com.study.spring.case03" />
+	
+	<!-- 
+	use-default-filters="true" 可以排除 <context:exclude-filter> 所定義的
+	-->
+	<!-- 
+	<context:component-scan base-package="com.study.spring.case03" use-default-filters="true">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>	
+		<context:exclude-filter type="assignable" expression="com.study.spring.case03.service.Util"/>
+	</context:component-scan>
+	 -->
+	
+	
+	<!-- 
+	use-default-filters="false" 只會掃描 <context:include-filter> 所定義的
+	Util 類別可以不加上 @Component
+	<context:include-filter type="assignable" expression="com.study.spring.case03.service.Util"/>
+	 -->
+	 <!-- 	
+	<context:component-scan base-package="com.study.spring.case03" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>	
+	</context:component-scan>
+	 -->
+	 	
 	<!--  
 	<bean class="com.study.spring.case03.controller.UserController"></bean>
 	<bean class="com.study.spring.case03.service.UserServiceImpl"></bean>
